@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Tilt+Neon&display=swap');
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://t3.ftcdn.net/jpg/05/70/16/42/360_F_570164224_K5nqmNB97orAwe1IetZwWRr53sn5imFA.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .hero
+        {
+            border: 2px solid black;
+            color: aliceblue;
+            height: 200px;
+            width: 350px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(10px);
+        }
+        .hero > .title
+        {
+            margin-bottom: 20px;
+        }
+        .hero > .btn > button
+        {
+            height: 50px;
+            width: 100px;
+            font-size: 1em;
+        }
+        .output
+        {
+            margin-top: 10px;
+            font-size: 2.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="title">
+                <h1>Emoji Generator</h1>
+            </div>
+            <div class="btn">
+                <button id="happyBtn">Happy 😁</button>
+                <button id="sadBtn">Sad 😞</button>
+                <button id="angryBtn">Angry 😤</button>
+            </div>
+            <div class="output">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Happy Emojis
+
+    function happyEmoji(){
+        hEmoji = ["😁","🥰","😍","🤩","😂","😂","😃","😄","🤗"]
+        const randomHappy = Math.floor(Math.random() * hEmoji.length)
+        return hEmoji[randomHappy];
+    }
+
+    document.getElementById('happyBtn').addEventListener('click',function(){
+        let finalOp = document.querySelector('.output');
+        finalOp.innerHTML = happyEmoji()
+    });
+
+    // Sad Emojis
+
+    function sadEmoji(){
+        console.log("Sad")
+        sEmoji = ["☹️","😖","🥹","😭","🥺","🥲","😔","😥","😞"]
+        const randomSad = Math.floor(Math.random() * sEmoji.length)
+        return sEmoji[randomSad];
+    }
+    document.getElementById("sadBtn").addEventListener('click',function(){
+        let finalOp = document.querySelector('.output');
+        finalOp.innerHTML = sadEmoji();
+    });
+   
+
+    function angryEmoji(){
+        aEmoji = ["👿","😤","😡","😠","💢","🤬"]
+        const randomAngry = Math.floor(Math.random() * aEmoji.length)
+        return aEmoji[randomAngry];
+    }
+    document.getElementById("angryBtn").addEventListener('click',function(){
+        let finalOp = document.querySelector('.output');
+        finalOp.innerHTML = angryEmoji();
+    });
+</script>
+</html>
